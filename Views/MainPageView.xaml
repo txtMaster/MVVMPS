@@ -1,0 +1,48 @@
+<!--
+<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+        <TextBlock>Contenido</TextBlock>
+        <ContentControl Content="{Binding CurrentStep}" />
+        <Button Command="{Binding NextCommand}">Hola</Button>
+    </StackPanel>
+</Window>
+-->
+<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:Mvvm.ViewModels"
+
+    Title="SPA MVVM"
+    Width="600"
+    Height="400">
+    <DockPanel>
+
+        <!-- NAV -->
+
+        <StackPanel
+            DockPanel.Dock="Left"
+            Width="150"
+            Background="#111">
+
+            <Button
+                Margin="10,10"
+                Height="40"
+                Content="HOME"/>
+
+            <Button
+                Margin="10,0"
+                Height="40"
+                Content="NEXT" Command="{Binding NextCommand}"/>
+
+        </StackPanel>
+
+        <!-- SPA CONTENT -->
+
+        <ContentControl
+            Content="{Binding CurrentView}"/>
+
+    </DockPanel>
+
+</Window>
