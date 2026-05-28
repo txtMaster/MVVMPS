@@ -1,14 +1,3 @@
-<!--
-<Window
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <StackPanel>
-        <TextBlock>Contenido</TextBlock>
-        <ContentControl Content="{Binding CurrentStep}" />
-        <Button Command="{Binding NextCommand}">Hola</Button>
-    </StackPanel>
-</Window>
--->
 <Window
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -29,7 +18,8 @@
             <Button
                 Margin="10,10"
                 Height="40"
-                Content="HOME"/>
+                Content="PREV"
+                Command="{Binding PreviousCommand}"/>
 
             <Button
                 Margin="10,0"
@@ -37,12 +27,7 @@
                 Content="NEXT" Command="{Binding NextCommand}"/>
 
         </StackPanel>
-
-        <!-- SPA CONTENT -->
-
-        <ContentControl
-            Content="{Binding CurrentView}"/>
-
+        <ContentControl Content="{Binding CurrentView}"/>
     </DockPanel>
 
 </Window>

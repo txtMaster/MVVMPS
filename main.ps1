@@ -29,6 +29,8 @@ Add-Type `
         "System.Xaml"
     )
 
+. (Join-Path $App.Utils "Logger.ps1")
+
 Import-Module "$($App.Components)\MainPageComponent.psm1"
 
 $MainPage = New-MainPageComponent

@@ -1,9 +1,16 @@
+using Mvvm.Core.Bases;
 namespace Mvvm.Models
 {
-    public class ConfigModel
+    public class ConfigModel : BaseModel
     {
-        public string Password = "";
-        public string InstanceName = "ITS2026";
-        public string SystemDirname = "VisualCont2021";
+        public string _password = "";
+        public string _instanceName = "ITS2026";
+        public string _systemDirname = "VisualCont2021";
+
+        public string SystemDirname
+        {
+            get { return _systemDirname; }
+            set { _systemDirname = value; OnPropertyChanged(); }
+        }
     }
 }

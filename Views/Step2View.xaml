@@ -4,11 +4,12 @@
 
     <StackPanel Margin="20">
 
-        <TextBlock Text="Paso 1"/>
+        <TextBlock Text="Paso 2" Background="Red"/>
 
         <TextBox
         Text="{Binding Config.SystemDirname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
         Foreground="Red"/>
+
     </StackPanel>
 
 </UserControl>
