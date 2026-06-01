@@ -1,15 +1,6 @@
-<UserControl
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <StackPanel Margin="20">
-
-        <TextBlock Text="Paso 2" Background="Red"/>
-
-        <TextBox
-        Text="{Binding Config.SystemDirname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-        Foreground="Red"/>
-
+        <TextBlock Text="{Binding StepM.Title, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Text="{Binding ConfigM.SystemLocation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
     </StackPanel>
-
 </UserControl>

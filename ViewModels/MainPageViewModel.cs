@@ -10,34 +10,51 @@ using System.Collections.Generic;
 
 namespace Mvvm.ViewModels
 {
+
     public class MainPageViewModel : NotifyBase
     {
-        public ConfigViewModel ConfigVM { get; set; }
-        private StepModel _currentStep;
-        private UserControl _currentView;
-        public List<StepModel> steps = new List<StepModel>();
-        public Action<StepModel> OnStepChanged;
-        private int _currentStepIndex = 0;
-        public MainPageViewModel(ConfigViewModel config)
+        private ConfigModel _configModel;
+        public ConfigModel ConfigM
         {
-            if (config == null) config = new ConfigViewModel(null);
-            ConfigVM = config;
+            get { return _configModel; }
+            set
+            {
+                _configModel = value;
+                OnPropertyChanged();
+
+            }
+        }
+        private StepViewModel _currentStep;
+        private UserControl _currentView;
+        public List<StepViewModel> steps = new List<StepViewModel>();
+        private int _currentStepIndex = 0;
+        private readonly Func<string, UserControl> _viewFactory;
+        public MainPageViewModel(
+            ConfigModel config,
+            Func<string, UserControl> viewFactory
+        )
+        {
+            _viewFactory = viewFactory;
+            if (config == null) config = new ConfigModel();
+            ConfigM = config;
             PreviousCommand = new RelayCommand(_ => ToogleStep(-1));
             NextCommand = new RelayCommand(_ => ToogleStep(1));
         }
-        public void AddStep(StepModel step)
+        public void AddStep(StepViewModel step)
         {
             steps.Add(step);
             if (CurrentStep == null) CurrentStep = step;
         }
-        public StepModel CurrentStep
+        public StepViewModel CurrentStep
         {
             get { return _currentStep; }
             set
             {
                 _currentStep = value;
                 OnPropertyChanged();
-                if (OnStepChanged != null) OnStepChanged.Invoke(value);
+
+                CurrentView = _viewFactory(value.StepM.ViewName);
+                if (CurrentView != null) { CurrentView.DataContext = CurrentStep; }
             }
         }
         public UserControl CurrentView

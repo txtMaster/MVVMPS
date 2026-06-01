@@ -2,26 +2,16 @@ using System.Windows.Input;
 using Mvvm.Core.Bases;
 using Mvvm.Core.Interfaces;
 using Mvvm.Core.Commands;
+using Mvvm.Models;
 
 namespace Mvvm.ViewModels
 {
-    public class Step2ViewModel : NotifyBase, IWizardStep
+    public class Step2ViewModel : StepViewModel
     {
-        private string _title = "Pagina 2";
-
-        public string Title
+        public Step2ViewModel(StepModel StepM, ConfigModel ConfigM) : base(StepM, ConfigM)
         {
-            get { return _title; }
-            set
-            {
-                _title = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public bool Validate()
-        {
-            return !string.IsNullOrWhiteSpace(Title);
+            this.StepM.Title = "Selecciona los parametros para la instalación";
+            this.StepM.NextStepText = "Configurar Ejecución";
         }
     }
 }
