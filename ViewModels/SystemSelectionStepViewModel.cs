@@ -5,9 +5,9 @@ using Mvvm.Core.Commands;
 using Mvvm.Models;
 namespace Mvvm.ViewModels
 {
-    public class Step1ViewModel : StepViewModel
+    public class SystemSelectionStepViewModel : StepViewModel
     {
-        public Step1ViewModel(StepModel StepM, ConfigModel ConfigM) : base(StepM, ConfigM)
+        public SystemSelectionStepViewModel(StepModel StepM, ConfigModel ConfigM) : base(StepM, ConfigM)
         {
             this.StepM.Title = "Selecciona el sistema a instalar";
             this.StepM.BeforeStepText = "";

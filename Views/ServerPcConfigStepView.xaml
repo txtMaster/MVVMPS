@@ -45,18 +45,25 @@
       Grid.Column="0" Grid.Row="1"
       GroupName="SystemName">VisualCont 11.5</RadioButton>
     </Grid>
-    <StackPanel
+    <Grid
       Grid.Row="2"
-      HorizontalAlignment="Center"
-      Orientation="Horizontal">
+      HorizontalAlignment="Center">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
       <RadioButton
+        Grid.Column="0"
         Content="Maquina Principal"
         GroupName="Mode"
         IsChecked="{Binding IsMain, Mode=TwoWay}" />
+      <Border Grid.Column="1" Margin="{StaticResource BaseSpace}"/>
       <RadioButton
+        Grid.Column="3"
         Content="Maquina de red"
         GroupName="Mode"
         IsChecked="{Binding IsNet, Mode=TwoWay}" />
-    </StackPanel>
+  </Grid>
   </Grid>
 </UserControl>

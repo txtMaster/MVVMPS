@@ -1,0 +1,93 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!--  BasedOn="{StaticResource BaseButton}"  -->
+            <Style
+                x:Key="HiddenButton"
+                BasedOn="{StaticResource BaseButton}"
+                TargetType="Button">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding CurrentStep.StepM.BeforeStepText}" Value="">
+                        <Setter Property="Visibility" Value="Hidden" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel Margin="20">
+        <TextBlock Text="{Binding StepM.Title, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Text="Nombre de la carpeta" />
+            <TextBox Grid.Column="1" Text="{Binding ConfigM.SystemLocation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Grid.Column="2" Content="..."/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Text="Ubicacion del Sistema" />
+            <TextBox Grid.Column="1" Text="{Binding ConfigM.SystemLocation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Grid.Column="2" Content="..."/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Text="Nombre de Instancia" />
+            <TextBox Grid.Column="1" Text="{Binding ConfigM.SystemLocation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Grid.Column="2" Content="..."/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="0"
+                    VerticalAlignment="Center"
+                    Text="Usuario" />
+                <TextBox Grid.Column="1" Text="{Binding ConfigM.SystemLocation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="0"
+                    VerticalAlignment="Center"
+                    Text="Clave" />
+                <TextBox Grid.Column="1" Text="{Binding ConfigM.SystemLocation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+        </Grid>
+    </StackPanel>
+</UserControl>

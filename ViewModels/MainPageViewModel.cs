@@ -35,8 +35,7 @@ namespace Mvvm.ViewModels
         )
         {
             _viewFactory = viewFactory;
-            if (config == null) config = new ConfigModel();
-            ConfigM = config;
+            ConfigM = config ?? new ConfigModel();
             PreviousCommand = new RelayCommand(_ => ToogleStep(-1));
             NextCommand = new RelayCommand(_ => ToogleStep(1));
         }

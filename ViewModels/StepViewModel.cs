@@ -20,11 +20,7 @@ namespace Mvvm.ViewModels
         public StepModel StepM
         {
             get { return _stepM; }
-            set
-            {
-                _stepM = value;
-                OnPropertyChanged();
-            }
+            set { _stepM = value; OnPropertyChanged(); }
         }
         public bool Validate()
         {

@@ -16,5 +16,9 @@ namespace Mvvm.Models
             this.BeforeStepText = BeforeStepText;
             this.NextStepText = NextStepText;
         }
+        public bool Validate()
+        {
+            return true;
+        }
     }
 }

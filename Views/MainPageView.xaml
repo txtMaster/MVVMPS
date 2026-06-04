@@ -21,7 +21,7 @@
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
-        </ResourceDictionary>
+            </ResourceDictionary>
     </Window.Resources>
     <Border Tag="FakeWindow">
         <Grid>
@@ -51,14 +51,14 @@
                         DockPanel.Dock="Right" />
                 </DockPanel>
             </Border>
-            <StackPanel
+            <DockPanel
                 Name="main"
                 Grid.Row="1"
                 VerticalAlignment="Stretch"
-                Background="Aqua"
+                Margin="{StaticResource BaseSpace}"
                 Tag="Main">
                 <ContentControl Content="{Binding CurrentView}" />
-            </StackPanel>
+            </DockPanel>
             <Border
                 Grid.Row="2"
                 Padding="{StaticResource MediumSpace}"

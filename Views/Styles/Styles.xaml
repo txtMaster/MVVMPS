@@ -241,7 +241,9 @@
     <Setter Property="WindowStyle" Value="None" />
     <Setter Property="AllowsTransparency" Value="True" />
   </Style>
-  <Style TargetType="DockPanel" />
+  <Style TargetType="DockPanel">
+    <Setter Property="VerticalAlignment" Value="Center"/>
+  </Style>
   <Style TargetType="Border">
     <Style.Triggers>
       <Trigger Property="Tag" Value="FakeWindow">

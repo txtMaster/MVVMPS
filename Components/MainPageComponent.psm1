@@ -1,12 +1,15 @@
 Import-Module "$($App.Utils)\ComponentUtils.psm1"
 Import-Module "$($App.Utils)\XAMLUtils.psm1"
-Import-Module "$($App.Components)\Step1Component.psm1"
-Import-Module "$($App.Components)\Step2Component.psm1"
+Import-Module "$($App.Components)\NetPcConfigStepComponent.psm1"
+Import-Module "$($App.Components)\SystemSelectionStepComponent.psm1"
 
 Function New-MainPageComponent {
     param([Mvvm.Models.ConfigModel] $configM)
     $script:view = LoadView "MainPage"
+    
+    #corregir
     $view.FindName("closeBtn").Add_Click({$script:view.close()})
+
     $script:vm = [Mvvm.ViewModels.MainPageViewModel]::new(
         $configM,
         [Func[string, System.Windows.Controls.UserControl]] {
@@ -25,8 +28,8 @@ Function New-MainPageComponent {
         Write-Host $vm.ConfigVM.Config.SystemDirname
     }
     #>
-    $vm.AddStep( (New-Step1Component $configM).viewmodel)
-    $vm.AddStep((New-Step2Component $configM).viewmodel)
+    $vm.AddStep( (New-SystemSelectionStepComponent $configM).viewmodel)
+    $vm.AddStep((New-NetPcConfigStepComponent $configM).viewmodel)
     $vm.CurrentStep = $vm.steps[0]
     return @{
         view      = $view

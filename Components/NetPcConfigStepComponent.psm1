@@ -1,11 +1,11 @@
 Import-Module "$($App.Utils)\ComponentUtils.psm1"
 Import-Module "$($App.Utils)\XAMLUtils.psm1"
-Function New-Step2Component{
+Function New-NetPcConfigStepComponent{
     param(
         [Mvvm.Models.ConfigModel] $config
     )
-    $stepVM = [Mvvm.ViewModels.Step2ViewModel]::new(
-        [Mvvm.Models.StepModel]::new("Step2"),
+    $stepVM = [Mvvm.ViewModels.NetPcConfigStepViewModel]::new(
+        [Mvvm.Models.StepModel]::new("NetPcConfigStep"),
         $config
     )
     return @{
@@ -14,4 +14,4 @@ Function New-Step2Component{
 
     
 }
-Export-ModuleMember -Function New-Step2Component
+Export-ModuleMember -Function New-NetPcConfigStepComponent
