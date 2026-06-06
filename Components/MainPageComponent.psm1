@@ -4,7 +4,7 @@ Import-Module "$($App.Components)\NetPcConfigStepComponent.psm1"
 Import-Module "$($App.Components)\SystemSelectionStepComponent.psm1"
 
 Function New-MainPageComponent {
-    param([Mvvm.Models.ConfigModel] $configM)
+    param([Mvvm.Models.Configuration] $configM)
     $script:view = LoadView "MainPage"
     
     #corregir

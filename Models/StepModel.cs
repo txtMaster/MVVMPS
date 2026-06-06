@@ -6,6 +6,14 @@ namespace Mvvm.Models
         public string ViewName { get; set; }
         public string BeforeStepText { get; set; }
         public string NextStepText { get; set; }
+        public StepModel GetNextStep(Configuration Config)
+        {
+            return null;
+        }
+        public StepModel GetPreviousStep(Configuration Config)
+        {
+            return null;
+        }
         public StepModel(
             string ViewName,
             string NextStepText = "Siguiente",
@@ -16,7 +24,7 @@ namespace Mvvm.Models
             this.BeforeStepText = BeforeStepText;
             this.NextStepText = NextStepText;
         }
-        public bool Validate()
+        public bool Validate(Configuration Config)
         {
             return true;
         }

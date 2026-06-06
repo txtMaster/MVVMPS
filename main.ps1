@@ -42,5 +42,5 @@ $style = [Windows.Markup.XamlReader]::Load($styleReader)
 
 Import-Module "$($App.Components)\MainPageComponent.psm1"
 
-$MainPage = New-MainPageComponent([Mvvm.Models.ConfigModel]::new())
+$MainPage = New-MainPageComponent([Mvvm.Models.Configuration]::new())
 $MainPage.view.ShowDialog() | Out-Null

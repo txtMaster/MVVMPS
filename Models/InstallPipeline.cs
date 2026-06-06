@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 namespace Mvvm.Models
 {
-    public class InstallPipelineModel
+    public class InstallPipeline
     {
-        public InstallPipelineModel(List<InstallStepModel> InstallSteps)
+        public InstallPipeline(List<InstallStep> InstallSteps)
         {
-            this.InstallSteps = InstallSteps ?? new List<InstallStepModel>();
+            this.InstallSteps = InstallSteps ?? new List<InstallStep>();
         }
-        public List<InstallStepModel> InstallSteps { get; set; }
-        public bool Execute(ConfigModel Config)
+        public List<InstallStep> InstallSteps { get; set; }
+        public bool Execute(Configuration Config)
         {
             bool result = false;
             foreach (var InstallStep in InstallSteps)

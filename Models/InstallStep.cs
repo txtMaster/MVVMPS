@@ -1,9 +1,9 @@
 using System;
 namespace Mvvm.Models
 {
-    public class InstallStepModel
+    public class InstallStep
     {
-        public InstallStepModel(Func<ConfigModel, string> Validation)
+        public InstallStep(Func<Configuration, string> Validation)
         {
             this.Validation = Validation;
             Message = "";
@@ -11,8 +11,8 @@ namespace Mvvm.Models
         public string Message { get; set; }
         public bool Success { get; set; }
         public string Name { get; set; }
-        public Func<ConfigModel,string> Validation { get; set; }
-        public bool Execute(ConfigModel Config)
+        public Func<Configuration,string> Validation { get; set; }
+        public bool Execute(Configuration Config)
         {
             if (Validation == null)
             {

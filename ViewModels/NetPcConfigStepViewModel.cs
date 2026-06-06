@@ -8,7 +8,7 @@ namespace Mvvm.ViewModels
 {
     public class NetPcConfigStepViewModel : StepViewModel
     {
-        public NetPcConfigStepViewModel(StepModel StepM, ConfigModel ConfigM) : base(StepM, ConfigM)
+        public NetPcConfigStepViewModel(StepModel StepM, Configuration ConfigM) : base(StepM, ConfigM)
         {
             this.StepM.Title = "Selecciona los parametros para la instalación";
             this.StepM.NextStepText = "Configurar Ejecución";

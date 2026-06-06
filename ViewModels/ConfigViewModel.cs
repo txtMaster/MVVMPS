@@ -5,13 +5,12 @@ namespace Mvvm.ViewModels
 {
     public class ConfigViewModel : NotifyBase
     {
-        private ConfigModel _config;
-        public ConfigViewModel(ConfigModel config)
+        private Configuration _config;
+        public ConfigViewModel(Configuration Config)
         {
-            if(config == null) config = new ConfigModel();
-            _config = config;
+            this.Config = Config ?? new Configuration();
         }
-        public ConfigModel Config
+        public Configuration Config
         {
             get { return _config; }
             set

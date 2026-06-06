@@ -13,13 +13,13 @@ namespace Mvvm.ViewModels
 
     public class MainPageViewModel : NotifyBase
     {
-        private ConfigModel _configModel;
-        public ConfigModel ConfigM
+        private Configuration _Configuration;
+        public Configuration ConfigM
         {
-            get { return _configModel; }
+            get { return _Configuration; }
             set
             {
-                _configModel = value;
+                _Configuration = value;
                 OnPropertyChanged();
 
             }
@@ -30,12 +30,12 @@ namespace Mvvm.ViewModels
         private int _currentStepIndex = 0;
         private readonly Func<string, UserControl> _viewFactory;
         public MainPageViewModel(
-            ConfigModel config,
+            Configuration config,
             Func<string, UserControl> viewFactory
         )
         {
             _viewFactory = viewFactory;
-            ConfigM = config ?? new ConfigModel();
+            ConfigM = config ?? new Configuration();
             PreviousCommand = new RelayCommand(_ => ToogleStep(-1));
             NextCommand = new RelayCommand(_ => ToogleStep(1));
         }

@@ -2,7 +2,7 @@ using Mvvm.Core.Bases;
 using System;
 namespace Mvvm.Models   
 {
-    public class ConfigModel : BaseModel
+    public class Configuration : BaseModel
     {
         public string Password {get;set;}
         public string InstanceName {get;set;}

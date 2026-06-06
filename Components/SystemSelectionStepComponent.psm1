@@ -2,7 +2,7 @@ Import-Module "$($App.Utils)\ComponentUtils.psm1"
 Import-Module "$($App.Utils)\XAMLUtils.psm1"
 Function New-SystemSelectionStepComponent{
     param(
-        [Mvvm.Models.ConfigModel] $config
+        [Mvvm.Models.Configuration] $config
     )
     $stepVM = [Mvvm.ViewModels.SystemSelectionStepViewModel]::new(
         [Mvvm.Models.StepModel]::new("SystemSelectionStep"),

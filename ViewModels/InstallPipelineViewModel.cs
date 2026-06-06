@@ -5,6 +5,6 @@ namespace Mvvm.ViewModels
 {
     public class InstallPipelineModel : NotifyBase
     {
-        private ObservableCollection<InstallStepModel> InstallSteps = new ObservableCollection<InstallStepModel>();
+        private ObservableCollection<InstallStep> InstallSteps = new ObservableCollection<InstallStep>();
     }
 }
